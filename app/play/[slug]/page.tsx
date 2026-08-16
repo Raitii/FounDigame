@@ -1,10 +1,13 @@
-"use client";
-
-import { useParams } from "next/navigation";
 import { PlayExperience } from "@/components/play-experience";
-import { getGame } from "@/lib/data";
+import { games, getGame } from "@/lib/data";
 
-export default function PlayPage() {
-  const params = useParams<{ slug: string }>();
-  return <PlayExperience game={getGame(params.slug)} />;
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return games.map((game) => ({ slug: game.slug }));
+}
+
+export default async function PlayPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  return <PlayExperience game={getGame(slug)} />;
 }

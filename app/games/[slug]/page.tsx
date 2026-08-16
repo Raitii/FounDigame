@@ -1,10 +1,13 @@
-"use client";
-
-import { useParams } from "next/navigation";
 import { GameDetail } from "@/components/game-detail";
-import { getGame } from "@/lib/data";
+import { games, getGame } from "@/lib/data";
 
-export default function GameDetailPage() {
-  const params = useParams<{ slug: string }>();
-  return <GameDetail game={getGame(params.slug)} />;
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return games.map((game) => ({ slug: game.slug }));
+}
+
+export default async function GameDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  return <GameDetail game={getGame(slug)} />;
 }

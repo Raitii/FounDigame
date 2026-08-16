@@ -340,7 +340,7 @@ body:has(.play-page) .site-header, body:has(.play-page) .footer, body:has(.auth-
 
 /* Auth */
 .auth-page { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; background: white; }
-.auth-art { background: linear-gradient(rgba(3,8,19,.25), rgba(3,8,19,.86)), url('/images/prism-cup.png') center/cover; position: relative; display: flex; align-items: flex-end; }
+.auth-art { background-color: var(--navy); background-position: center; background-size: cover; position: relative; display: flex; align-items: flex-end; }
 .auth-overlay { padding: clamp(40px, 7vw, 90px); color: white; }
 .auth-overlay > svg { width: 48px; color: var(--lime); margin-bottom: 30px; }
 .auth-overlay .kicker { color: var(--lime); }.auth-overlay h1 { font-size: 39px; line-height: 1.45; }

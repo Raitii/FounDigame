@@ -5,10 +5,11 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, Gamepad2, MessageSquareText, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { games } from "@/lib/data";
+import { assetPath } from "@/lib/paths";
 
 const heroSlides = [
   {
-    image: "/images/pixel-kingdom.png",
+    image: assetPath("/images/pixel-kingdom-hd.png"),
     alt: "岩の中に広がるピクセルの王国",
     label: "FounDigame · 新しいゲーム体験",
     title: <><span>未完成だからこそ、</span><br /><em>世界は広がる。</em></>,
@@ -18,7 +19,7 @@ const heroSlides = [
     href: "/games/pixel-hearth",
   },
   {
-    image: "/images/deep-echoes.png",
+    image: assetPath("/images/deep-echoes.png"),
     alt: "深海遺跡へ降りていく小さな潜水艇",
     label: "PLAY · FEEL · DISCOVER",
     title: <><span>沈むほど、</span><br /><em>世界の声が近くなる。</em></>,
@@ -28,7 +29,7 @@ const heroSlides = [
     href: "/games/deep-echoes",
   },
   {
-    image: "/images/neon-orchard.png",
+    image: assetPath("/images/neon-orchard.png"),
     alt: "光る果実を育てるネオンの果樹園",
     label: "YOUR VOICE BUILDS THE NEXT",
     title: <><span>まだない遊びを、</span><br /><em>一緒に実らせる。</em></>,

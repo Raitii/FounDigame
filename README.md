@@ -25,3 +25,13 @@ npm run dev
 ## モックの範囲
 
 データベース、実認証、iframeゲーム配信、ファイルアップロード、サーバー側の権限検証は未実装です。次段階では画面内のモックデータをPrisma/PostgreSQLへ置き換え、Better Authと役割別アクセス制御を追加する想定です。
+
+## GitHub Pages
+
+`main`ブランチへpushすると、GitHub Actionsが静的サイトをビルドしてGitHub Pagesへ自動デプロイします。
+
+- 公開予定URL: `https://raitii.github.io/FounDingame/`
+- ローカルビルド: `npm run build`
+- 静的成果物: `out/`
+
+初回のみGitHubのリポジトリ画面で **Settings → Pages → Build and deployment → Source** を **GitHub Actions** に設定してください。
