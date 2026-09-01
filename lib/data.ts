@@ -23,9 +23,9 @@ export const games: Game[] = [
   {
     slug: "pixel-hearth",
     title: "PIXEL HEARTH",
-    tagline: "岩の向こうに、まだ誰も知らない小さな王国。",
+    tagline: "岩の中に眠る王国を探索し、町を少しずつ再建する。",
     description:
-      "壊れた世界の欠片を集め、住人たちと小さな王国を再建する探索RPG。今回のビルドでは、森のエリアと拠点づくりの最初の30分を遊べます。",
+      "壊れた王国を探索し、素材を集めて拠点を再建するRPGです。現在のビルドでは、森の探索と拠点づくりの最初の30分を体験できます。",
     image: assetPath("/images/pixel-kingdom-hd.png"),
     genre: "探索RPG",
     stage: "ALPHA 0.4",
@@ -47,9 +47,9 @@ export const games: Game[] = [
   {
     slug: "prism-ascent",
     title: "PRISM ASCENT",
-    tagline: "1試合3分。ひらめきで駆け上がる魔法競技。",
+    tagline: "色と形をつないで魔力をためる、1試合3分の対戦パズル。",
     description:
-      "色と形をつなげて魔力をチャージする、短時間対戦パズル。遊び方の伝わりやすさと、逆転ルールについてフィードバックを募集中です。",
+      "盤面の色と形をつないで魔力をため、相手より先にゲージを完成させる対戦パズルです。ルールの分かりやすさと、逆転要素のバランスについて感想を募集しています。",
     image: assetPath("/images/prism-cup.png"),
     genre: "対戦パズル",
     stage: "BETA 0.8",
@@ -71,9 +71,9 @@ export const games: Game[] = [
   {
     slug: "corebreak",
     title: "COREBREAK",
-    tagline: "砕くたび、未知の力が目を覚ます。",
+    tagline: "鉱石を砕き、集めたエネルギーで破壊力を強化する。",
     description:
-      "不思議な鉱石を割って、内部のエネルギーを組み合わせる実験的クリッカー。気持ちよい操作感と成長バランスを検証しています。",
+      "画面をクリックして鉱石を砕き、集めたエネルギーで道具を強化するクリッカーです。破壊したときの手応えと、強化速度のバランスを検証しています。",
     image: assetPath("/images/corebreak.png"),
     genre: "クリッカー",
     stage: "PROTOTYPE",
@@ -95,8 +95,8 @@ export const games: Game[] = [
   {
     slug: "deep-echoes",
     title: "DEEP ECHOES",
-    tagline: "光の届かない海で、忘れられた街の声を聴く。",
-    description: "小さな潜水艇で深海遺跡を探索するアドベンチャー。音の反響を頼りに地形を読み、沈んだ都市に残された記憶を集めます。",
+    tagline: "ソナーで暗い海底を照らし、沈んだ街の記憶を探す。",
+    description: "小さな潜水艇を操作し、ソナーの反響から海底の地形を読み取る探索アドベンチャーです。沈んだ都市を巡り、住人が残した記録を集めます。",
     image: assetPath("/images/deep-echoes.png"),
     genre: "探索ADV",
     stage: "ALPHA 0.3",
@@ -118,8 +118,8 @@ export const games: Game[] = [
   {
     slug: "neon-orchard",
     title: "NEON ORCHARD",
-    tagline: "実る光をリズムに変える、真夜中の果樹園。",
-    description: "ネオンフルーツを音楽に合わせて収穫するリズムゲーム。色の連鎖とタイミングで、自分だけの庭のサウンドが育っていきます。",
+    tagline: "光る果実をリズムに合わせて収穫し、音楽をつないでいく。",
+    description: "音楽のタイミングに合わせてネオンフルーツを収穫するリズムゲームです。同じ色を連続で取ると音が重なり、果樹園の曲が変化します。",
     image: assetPath("/images/neon-orchard.png"),
     genre: "リズム",
     stage: "BETA 0.7",
@@ -141,8 +141,8 @@ export const games: Game[] = [
   {
     slug: "tiny-forge",
     title: "TINY FORGE",
-    tagline: "森の片隅で、だれかの冒険を鍛える。",
-    description: "小さな鍛冶工房を営むクラフトシミュレーション。旅人の話を聞き、その人の次の冒険にぴったりな道具を仕立てます。",
+    tagline: "旅人の依頼を聞き、次の冒険に必要な道具を鍛える。",
+    description: "森の鍛冶工房を営み、旅人の目的に合った武器や道具を作るクラフトシミュレーションです。素材と加工方法の組み合わせで、完成品の性能が変わります。",
     image: assetPath("/images/tiny-forge.png"),
     genre: "シミュレーション",
     stage: "ALPHA 0.5",
@@ -164,8 +164,8 @@ export const games: Game[] = [
   {
     slug: "moonline-express",
     title: "MOONLINE EXPRESS",
-    tagline: "月と月を結ぶ、夜空でいちばん小さな鉄道。",
-    description: "浮遊都市を結ぶ路線を組み立てる、静かな鉄道ストラテジー。限られた星の燃料で、夜が明けるまでに乗客を届けます。",
+    tagline: "限られた燃料で線路を引き、夜明けまでに乗客を届ける。",
+    description: "夜空に浮かぶ都市同士を線路で結ぶ鉄道ストラテジーです。残りの燃料と乗客の行き先を確認しながら、効率のよい路線を組み立てます。",
     image: assetPath("/images/moonline-express.png"),
     genre: "ストラテジー",
     stage: "PROTOTYPE",
@@ -187,8 +187,8 @@ export const games: Game[] = [
   {
     slug: "signal-lost",
     title: "SIGNAL LOST",
-    tagline: "途切れた星座をつなぎ、最後の通信を取り戻す。",
-    description: "廃棄された宇宙観測所を舞台にした環境パズル。光と周波数を組み替え、遠い惑星から届く未知の信号を復元します。",
+    tagline: "光と周波数を組み替え、途切れた宇宙通信を復元する。",
+    description: "使われなくなった宇宙観測所で、アンテナの向きと信号の周波数を調整するパズルです。ノイズを取り除き、遠い惑星から届いた通信を復元します。",
     image: assetPath("/images/signal-lost.png"),
     genre: "パズル",
     stage: "ALPHA 0.2",
@@ -210,8 +210,8 @@ export const games: Game[] = [
   {
     slug: "paper-wings",
     title: "PAPER WINGS",
-    tagline: "ページをめくる風に乗って、物語の空へ。",
-    description: "折り紙の鳥となって本の島々を渡るフライトアドベンチャー。風を読み、散らばった物語の一節を集めて空を描き直します。",
+    tagline: "折り紙の鳥を操作し、風に乗って本の島々を渡る。",
+    description: "折り紙の鳥を操作して、本から生まれた島々を飛び回るアドベンチャーです。上昇気流を乗り継ぎ、各地に散らばった物語のページを集めます。",
     image: assetPath("/images/paper-wings.png"),
     genre: "フライト",
     stage: "BETA 0.6",

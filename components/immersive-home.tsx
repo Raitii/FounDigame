@@ -11,9 +11,9 @@ const heroSlides = [
   {
     image: assetPath("/images/pixel-kingdom-hd.png"),
     alt: "岩の中に広がるピクセルの王国",
-    label: "FounDigame · 新しいゲーム体験",
-    title: <><span>未完成だからこそ、</span><br /><em>世界は広がる。</em></>,
-    text: "開発途中のゲームに飛び込み、最初のプレイヤーになろう。",
+    label: "探索RPG · ALPHA 0.4",
+    title: <><span>岩を割ると、</span><br /><em>小さな王国が現れる。</em></>,
+    text: "素材を集め、住人と一緒に壊れた町を再建する探索RPG。",
     game: "PIXEL HEARTH",
     build: "ALPHA 0.4",
     href: "/games/pixel-hearth",
@@ -21,9 +21,9 @@ const heroSlides = [
   {
     image: assetPath("/images/deep-echoes.png"),
     alt: "深海遺跡へ降りていく小さな潜水艇",
-    label: "PLAY · FEEL · DISCOVER",
-    title: <><span>沈むほど、</span><br /><em>世界の声が近くなる。</em></>,
-    text: "完成前だから出会える、荒削りな驚きと可能性。",
+    label: "深海探索ADV · ALPHA 0.3",
+    title: <><span>音を頼りに、</span><br /><em>沈んだ街を探す。</em></>,
+    text: "ソナーで暗い海底を読み、遺跡に残された記憶を集めよう。",
     game: "DEEP ECHOES",
     build: "ALPHA 0.3",
     href: "/games/deep-echoes",
@@ -31,9 +31,9 @@ const heroSlides = [
   {
     image: assetPath("/images/neon-orchard.png"),
     alt: "光る果実を育てるネオンの果樹園",
-    label: "YOUR VOICE BUILDS THE NEXT",
-    title: <><span>まだない遊びを、</span><br /><em>一緒に実らせる。</em></>,
-    text: "遊んだ感触を届けて、まだ見ぬ名作を一緒に育てよう。",
+    label: "リズムゲーム · BETA 0.7",
+    title: <><span>光る果実を、</span><br /><em>リズムに合わせて収穫。</em></>,
+    text: "連鎖をつないで、自分だけの果樹園の音楽を育てよう。",
     game: "NEON ORCHARD",
     build: "BETA 0.7",
     href: "/games/neon-orchard",
@@ -44,38 +44,38 @@ const storyScenes = [
   {
     image: games[2].image,
     number: "01",
-    eyebrow: "PLAY THE ROUGH IDEA",
-    title: <>まずは、<br />触れてみる。</>,
-    text: "完成度では選ばなくていい。少しでも心が動いたら、その世界へ。インストール不要ですぐに遊べます。",
-    action: "COREBREAKを遊ぶ",
+    eyebrow: "STEP 1 · まず遊ぶ",
+    title: <>まずは3分、<br />遊んでみる。</>,
+    text: "気になる作品を選んで、ブラウザですぐ体験。操作感やゲームの面白さを確かめてみましょう。",
+    action: "COREBREAKを体験する",
     href: "/play/corebreak",
     icon: Gamepad2,
-    glassTitle: "最初の3分を体験",
-    glassText: "小さなプロトタイプにも、大きな発見がある。",
+    glassTitle: "クリックして鉱石を砕く",
+    glassText: "短いプロトタイプで、ゲームの中心となる遊びを試せます。",
   },
   {
     image: games[0].image,
     number: "02",
-    eyebrow: "TURN FEELING INTO WORDS",
-    title: <>感じたことを、<br />そのまま届ける。</>,
-    text: "うまく言葉にできなくても大丈夫。直感的な評価や短いひとことが、開発者には大切な道しるべです。",
-    action: "フィードバックを見る",
+    eyebrow: "STEP 2 · 感想を送る",
+    title: <>よかった点を、<br />ひとことで伝える。</>,
+    text: "評価ボタンと短いコメントで、面白かった点や迷った点を開発者へ送れます。",
+    action: "PIXEL HEARTHを見る",
     href: "/games/pixel-hearth",
     icon: MessageSquareText,
-    glassTitle: "「もっと遊びたい」が届きました",
-    glassText: "プレイヤーの声から次のアップデートが始まる。",
+    glassTitle: "「拠点づくりを続けたい」",
+    glassText: "具体的な感想が、次の改善内容を決める手がかりになります。",
   },
   {
     image: games[1].image,
     number: "03",
-    eyebrow: "SUPPORT THE NEXT BUILD",
-    title: <>続きを願う気持ちを、<br />光に変える。</>,
-    text: "毎月の応援ポイントを、続きを見たい作品へ。あなたの期待が、ゲームの未来を少しだけ前に進めます。",
+    eyebrow: "STEP 3 · ポイントで応援",
+    title: <>続きを遊びたい作品を、<br />ポイントで応援する。</>,
+    text: "毎月付与される応援ポイントを、開発を続けてほしいゲームに送れます。",
     action: "応援するゲームを探す",
     href: "/games",
     icon: Sparkles,
-    glassTitle: "+ 50 SUPPORT POINTS",
-    glassText: "この応援が、次のビルドを照らします。",
+    glassTitle: "50ポイントを送りました",
+    glassText: "応援数は、開発者が次の更新を考える参考になります。",
   },
 ];
 
@@ -126,7 +126,7 @@ export function ImmersiveHero() {
           </div>
         </div>
         <div className="hero-side-card glass-surface">
-          <span>NOW SHOWING</span><strong>{slide.game}</strong><small>{slide.build} · PLAYABLE NOW</small>
+          <span>表示中のゲーム</span><strong>{slide.game}</strong><small>{slide.build} · ブラウザで体験可能</small>
           <div className="hero-mini-progress"><i key={active} /></div>
         </div>
         <div className="hero-slider-nav" aria-label="注目ゲームのスライド">
@@ -181,7 +181,7 @@ export function ScrollStory() {
             <Link href={scene.href}>{scene.action} <ArrowRight /></Link>
           </div>
           <div className="story-glass-card glass-surface" key={`card-${active}`}>
-            <div><Icon /></div><span>LIVE MOMENT</span><strong>{scene.glassTitle}</strong><p>{scene.glassText}</p>
+            <div><Icon /></div><span>体験イメージ</span><strong>{scene.glassTitle}</strong><p>{scene.glassText}</p>
           </div>
         </div>
         <div className="story-index">{storyScenes.map((item, index) => <span className={active === index ? "active" : ""} key={item.number}>{item.number}</span>)}</div>
