@@ -30,7 +30,7 @@ npm run dev
 
 `main`ブランチへpushすると、GitHub Actionsが静的サイトをビルドしてGitHub Pagesへ自動デプロイします。
 
-- 公開予定URL: `https://raitii.github.io/FounDingame/`
+- 公開予定URL: `https://raitii.github.io/FounDigame/`
 - ローカルビルド: `npm run build`
 - 静的成果物: `out/`
 

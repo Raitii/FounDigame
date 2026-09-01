@@ -36,7 +36,7 @@ jobs:
       - name: Build static site
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /FounDingame
+          NEXT_PUBLIC_BASE_PATH: "/${{ github.event.repository.name }}"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
