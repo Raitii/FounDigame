@@ -17,6 +17,7 @@ export type Game = {
   tags: string[];
   status: "公開中" | "審査中" | "下書き";
   roadmap: { label: string; done: boolean }[];
+  feedbackPrompts: string[];
 };
 
 export const games: Game[] = [
@@ -43,6 +44,11 @@ export const games: Game[] = [
       { label: "第2エリア：水晶洞窟", done: false },
       { label: "協力プレイ", done: false },
     ],
+    feedbackPrompts: [
+      "最初の5分で、次の目的が分かりましたか？",
+      "素材を集めて拠点を作る流れは気持ちよかったですか？",
+      "次の更新で会ってみたい住人や追加してほしい機能はありますか？",
+    ],
   },
   {
     slug: "prism-ascent",
@@ -66,6 +72,11 @@ export const games: Game[] = [
       { label: "ランクマッチ", done: true },
       { label: "観戦モード", done: false },
       { label: "シーズン1", done: false },
+    ],
+    feedbackPrompts: [
+      "チュートリアル後に対戦ルールを理解できましたか？",
+      "逆転ルールは納得できるバランスでしたか？",
+      "盤面の色や形で見分けにくいものはありましたか？",
     ],
   },
   {
@@ -91,6 +102,11 @@ export const games: Game[] = [
       { label: "鉱石図鑑", done: false },
       { label: "サウンド強化", done: false },
     ],
+    feedbackPrompts: [
+      "鉱石を砕いたときの手応えは気持ちよかったですか？",
+      "強化の速度は遅すぎたり、速すぎたりしませんでしたか？",
+      "追加してほしい破壊エフェクトや効果音はありますか？",
+    ],
   },
   {
     slug: "deep-echoes",
@@ -113,6 +129,11 @@ export const games: Game[] = [
       { label: "第1深度の遺跡", done: true },
       { label: "潜水艇カスタム", done: false },
       { label: "深海生物図鑑", done: false },
+    ],
+    feedbackPrompts: [
+      "説明を読まなくてもソナーを操作できましたか？",
+      "暗い海底でも進む方向や地形を把握できましたか？",
+      "もっと探索したい場所や読みたい記録はありましたか？",
     ],
   },
   {
@@ -137,6 +158,11 @@ export const games: Game[] = [
       { label: "庭のカスタム", done: false },
       { label: "デイリーチャレンジ", done: false },
     ],
+    feedbackPrompts: [
+      "収穫のタイミングは音楽と合っていましたか？",
+      "同じ色をつなぐルールは画面から理解できましたか？",
+      "遊びやすかった曲、難しかった曲を教えてください。",
+    ],
   },
   {
     slug: "tiny-forge",
@@ -159,6 +185,11 @@ export const games: Game[] = [
       { label: "工房アップグレード", done: true },
       { label: "旅人の物語", done: false },
       { label: "季節イベント", done: false },
+    ],
+    feedbackPrompts: [
+      "旅人が求めている道具を迷わず判断できましたか？",
+      "素材と加工方法を選ぶ意味を感じられましたか？",
+      "会話の長さや依頼のテンポで気になる点はありましたか？",
     ],
   },
   {
@@ -183,6 +214,11 @@ export const games: Game[] = [
       { label: "6つの月都市", done: false },
       { label: "エンドレスモード", done: false },
     ],
+    feedbackPrompts: [
+      "線路を引く操作はすぐに理解できましたか？",
+      "燃料不足が理不尽だと感じる場面はありましたか？",
+      "路線を決める前に、さらに知りたい情報はありますか？",
+    ],
   },
   {
     slug: "signal-lost",
@@ -206,6 +242,11 @@ export const games: Game[] = [
       { label: "通信ログ", done: false },
       { label: "マルチエンディング", done: false },
     ],
+    feedbackPrompts: [
+      "周波数を合わせるための手がかりは分かりましたか？",
+      "ノイズや光の表示で見分けにくい部分はありましたか？",
+      "ヒントが出るタイミングは早すぎたり遅すぎたりしませんでしたか？",
+    ],
   },
   {
     slug: "paper-wings",
@@ -228,6 +269,11 @@ export const games: Game[] = [
       { label: "3つの本世界", done: true },
       { label: "タイムアタック", done: false },
       { label: "フォトモード", done: false },
+    ],
+    feedbackPrompts: [
+      "鳥の上昇・旋回操作は直感的でしたか？",
+      "上昇気流の場所を画面から見つけられましたか？",
+      "ページを見失った場所や、迷いやすいルートはありましたか？",
     ],
   },
 ];

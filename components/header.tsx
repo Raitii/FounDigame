@@ -11,6 +11,7 @@ const nav = [
   { href: "/", label: "ホーム" },
   { href: "/games", label: "ゲームを探す" },
   { href: "/#guide", label: "はじめてガイド" },
+  { href: "/plans", label: "料金・支援の仕組み" },
   { href: "/creator", label: "クリエイター" },
 ];
 

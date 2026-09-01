@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, Gamepad2, MessageSquareText, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowRight, Gamepad2, MessageSquareText, RotateCcw, Search, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { games } from "@/lib/data";
 import { assetPath } from "@/lib/paths";
@@ -42,40 +42,64 @@ const heroSlides = [
 
 const storyScenes = [
   {
-    image: games[2].image,
+    image: games[3].image,
     number: "01",
-    eyebrow: "STEP 1 · まず遊ぶ",
-    title: <>まずは3分、<br />遊んでみる。</>,
-    text: "気になる作品を選んで、ブラウザですぐ体験。操作感やゲームの面白さを確かめてみましょう。",
+    eyebrow: "STEP 1 · 未完成ゲームを発見",
+    title: <>まだ知らない作品を、<br />見つける。</>,
+    text: "ジャンルや開発段階から、これから面白くなりそうなゲームを探せます。完成前の今から、最初のプレイヤーになれます。",
+    action: "ゲームを探す",
+    href: "/games",
+    icon: Search,
+    glassTitle: `${games.length}作品から探す`,
+    glassText: "新しい作品や、まだ応援の少ない作品にも出会えます。",
+  },
+  {
+    image: games[2].image,
+    number: "02",
+    eyebrow: "STEP 2 · 遊んで気づく",
+    title: <>まずは遊んで、<br />小さな違和感を見つける。</>,
+    text: "操作しにくい場所、分かりにくい説明、もっと面白くなりそうなアイデア。プレイ中の小さな気づきが改善の種になります。",
     action: "COREBREAKを体験する",
     href: "/play/corebreak",
     icon: Gamepad2,
-    glassTitle: "クリックして鉱石を砕く",
-    glassText: "短いプロトタイプで、ゲームの中心となる遊びを試せます。",
+    glassTitle: "「強化ボタンが見つけにくい」",
+    glassText: "わざわざ問い合わせるほどではない一言も、ここでは大切な気づきです。",
   },
   {
     image: games[0].image,
-    number: "02",
-    eyebrow: "STEP 2 · 感想を送る",
-    title: <>よかった点を、<br />ひとことで伝える。</>,
-    text: "評価ボタンと短いコメントで、面白かった点や迷った点を開発者へ送れます。",
-    action: "PIXEL HEARTHを見る",
-    href: "/games/pixel-hearth",
+    number: "03",
+    eyebrow: "STEP 3 · 作品ページから送信",
+    title: <>気づいたその場で、<br />開発者へ伝える。</>,
+    text: "作品ページから「分かりにくい」「バグ報告」「改善アイデア」などを選び、短いコメントをすぐに送れます。",
+    action: "気づき入力欄を見る",
+    href: "/games/pixel-hearth#feedback",
     icon: MessageSquareText,
-    glassTitle: "「拠点づくりを続けたい」",
-    glassText: "具体的な感想が、次の改善内容を決める手がかりになります。",
+    glassTitle: "気づきの種類を選んで送信",
+    glassText: "作品ごとに開発者が知りたい質問も確認できます。",
   },
   {
     image: games[1].image,
-    number: "03",
-    eyebrow: "STEP 3 · ポイントで応援",
+    number: "04",
+    eyebrow: "STEP 4 · ポイントで応援",
     title: <>続きを遊びたい作品を、<br />ポイントで応援する。</>,
-    text: "毎月付与される応援ポイントを、開発を続けてほしいゲームに送れます。",
+    text: "月額利用者へ毎月付与される応援ポイントを、開発を続けてほしいゲームへ自由に分配できます。",
     action: "応援するゲームを探す",
     href: "/games",
     icon: Sparkles,
     glassTitle: "50ポイントを送りました",
-    glassText: "応援数は、開発者が次の更新を考える参考になります。",
+    glassText: "応援やプレイ状況は、開発者への支援配分を考える参考になります。",
+  },
+  {
+    image: games[4].image,
+    number: "05",
+    eyebrow: "STEP 5 · 更新後にもう一度",
+    title: <>変わったゲームを、<br />もう一度遊ぶ。</>,
+    text: "フォローした作品の更新を確認し、自分の気づきがどう活かされたかを体験。完成後も追加コンテンツや次回作を追いかけられます。",
+    action: "フォロー中の更新を見る",
+    href: "/mypage",
+    icon: RotateCcw,
+    glassTitle: "BETA 0.7へアップデート",
+    glassText: "遊ぶ、気づく、伝える、応援する。その循環がゲームを育てます。",
   },
 ];
 
@@ -174,7 +198,7 @@ export function ScrollStory() {
         <div className="story-progress" aria-hidden="true"><span style={{ height: `${progress * 100}%` }} /></div>
         <div className="shell story-layout">
           <div className="story-copy" key={active}>
-            <span className="story-number">{scene.number} / 03</span>
+            <span className="story-number">{scene.number} / {String(storyScenes.length).padStart(2, "0")}</span>
             <span className="kicker">{scene.eyebrow}</span>
             <h2>{scene.title}</h2>
             <p>{scene.text}</p>

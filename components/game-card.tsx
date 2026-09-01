@@ -20,7 +20,7 @@ export function GameCard({ game, priority = false }: { game: Game; priority?: bo
       <div className="game-card-body">
         <div className="game-card-top">
           <div><span className="genre">{game.genre}</span><h3><Link href={`/games/${game.slug}`}>{game.title}</Link></h3></div>
-          <button className={liked ? "heart active" : "heart"} onClick={() => toggleFavorite(game.slug)} aria-label="お気に入り"><Heart size={20} fill={liked ? "currentColor" : "none"} /></button>
+          <button className={liked ? "heart active" : "heart"} onClick={() => toggleFavorite(game.slug)} aria-label={liked ? "フォローを解除" : "作品をフォロー"}><Heart size={20} fill={liked ? "currentColor" : "none"} /></button>
         </div>
         <p>{game.tagline}</p>
         <div className="progress-line"><i style={{ width: `${game.progress}%` }} /></div>

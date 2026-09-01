@@ -2,7 +2,9 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 
-type FeedbackItem = { game: string; rating: number; text: string; date: string };
+export const feedbackCategories = ["分かりにくい", "バグ報告", "改善アイデア", "よかった点"] as const;
+export type FeedbackCategory = (typeof feedbackCategories)[number];
+type FeedbackItem = { game: string; category: FeedbackCategory; rating: number; text: string; date: string };
 type DemoState = {
   loggedIn: boolean;
   role: "player" | "creator";

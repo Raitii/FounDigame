@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, Check, Gamepad2, RotateCcw, Send, Sparkles, Star, Volume2 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import type { Game } from "@/lib/data";
-import { useDemo } from "./demo-provider";
+import { feedbackCategories, type FeedbackCategory, useDemo } from "./demo-provider";
 
 const shardColors = ["cyan", "violet", "gold", "lime"];
 
@@ -14,6 +14,7 @@ export function PlayExperience({ game }: { game: Game }) {
   const [score, setScore] = useState(0);
   const [target, setTarget] = useState(12);
   const [rating, setRating] = useState(0);
+  const [category, setCategory] = useState<FeedbackCategory | "">("");
   const [text, setText] = useState("");
   const [sent, setSent] = useState(false);
   const { addFeedback } = useDemo();
@@ -34,8 +35,8 @@ export function PlayExperience({ game }: { game: Game }) {
 
   function start() { setScore(0); setTime(20); setTarget(12); setPhase("playing"); }
   function sendFeedback() {
-    if (!rating) return;
-    addFeedback({ game: game.slug, rating, text, date: "たった今" });
+    if (!category || !text.trim()) return;
+    addFeedback({ game: game.slug, category, rating, text: text.trim(), date: "たった今" });
     setSent(true);
   }
 
@@ -48,7 +49,7 @@ export function PlayExperience({ game }: { game: Game }) {
         {phase === "done" && <div className="game-modal result"><span className="kicker">BUILD COMPLETE</span><h1>{score >= 1200 ? "EXCELLENT!" : score >= 600 ? "NICE RUN!" : "FIRST DISCOVERY"}</h1><div className="final-score"><span>SCORE</span><b>{score}</b></div><button className="button ghost-light" onClick={start}><RotateCcw /> もう一度</button></div>}
       </section>
 
-      {phase === "done" && <section className="feedback-sheet"><div className="feedback-inner">{sent ? <div className="feedback-sent"><div><Check /></div><h2>声を届けました！</h2><p>あなたのフィードバックが、次のアップデートのヒントになります。</p><Link href={`/games/${game.slug}`} className="button primary">ゲーム詳細へ戻る</Link></div> : <><span className="kicker">AFTER PLAY</span><h2>遊んでみて、どうでしたか？</h2><p>まずは直感で教えてください。</p><div className="stars">{[1,2,3,4,5].map((n) => <button key={n} className={rating >= n ? "active" : ""} onClick={() => setRating(n)}><Star fill={rating >= n ? "currentColor" : "none"} /></button>)}</div><textarea value={text} onChange={(e) => setText(e.target.value)} placeholder="よかったところ、気になったところ（任意）" /><button className="button primary" disabled={!rating} onClick={sendFeedback}><Send size={17} /> フィードバックを送る</button></>}</div></section>}
+      {phase === "done" && <section className="feedback-sheet"><div className="feedback-inner">{sent ? <div className="feedback-sent"><div><Check /></div><h2>気づきを届けました！</h2><p>小さな気づきが、次のアップデートを考えるヒントになります。</p><Link href={`/games/${game.slug}`} className="button primary">作品ページで更新を見る</Link></div> : <><span className="kicker">AFTER PLAY</span><h2>プレイ中に気づいたことは？</h2><p>「少し分かりにくい」だけでも大丈夫。種類を選んで、そのまま開発者へ届けられます。</p><span className="feedback-label">気づきの種類</span><div className="feedback-types">{feedbackCategories.map((item) => <button type="button" key={item} className={category === item ? "active" : ""} onClick={() => setCategory(item)}>{item}</button>)}</div><span className="feedback-label">満足度（任意）</span><div className="stars">{[1,2,3,4,5].map((n) => <button key={n} className={rating >= n ? "active" : ""} onClick={() => setRating(n)} aria-label={`${n}点`}><Star fill={rating >= n ? "currentColor" : "none"} /></button>)}</div><textarea value={text} onChange={(e) => setText(e.target.value)} placeholder="どこで、何を感じたかを短く教えてください" /><button className="button primary" disabled={!category || !text.trim()} onClick={sendFeedback}><Send size={17} /> この気づきを送る</button></>}</div></section>}
     </main>
   );
 }
