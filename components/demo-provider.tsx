@@ -5,8 +5,8 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 export const feedbackCategories = ["分かりにくい", "バグ報告", "改善アイデア", "よかった点"] as const;
 export type FeedbackCategory = (typeof feedbackCategories)[number];
 type FeedbackItem = { game: string; category: FeedbackCategory; rating: number; text: string; date: string };
-const storageKey = "foundingame-demo";
-const legacyStorageKey = "foundigame-demo";
+const storageKey = "foundigame-demo";
+const legacyStorageKey = "foundingame-demo";
 type DemoState = {
   loggedIn: boolean;
   role: "player" | "creator";

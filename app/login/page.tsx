@@ -10,7 +10,7 @@ import { assetPath } from "@/lib/paths";
 
 export default function LoginPage() {
   const [mode, setMode] = useState<"player" | "creator">("player");
-  const [email, setEmail] = useState("demo@foundingame.jp");
+  const [email, setEmail] = useState("demo@foundigame.jp");
   const { setLoggedIn, setRole } = useDemo();
   const router = useRouter();
 
@@ -26,7 +26,7 @@ export default function LoginPage() {
       <section className="auth-art" style={{ backgroundImage: `linear-gradient(rgba(3,8,19,.25), rgba(3,8,19,.86)), url(${assetPath("/images/prism-cup.png")})` }}>
         <div className="auth-overlay">
           <LogoMark />
-          <span className="kicker">WELCOME TO FOUNDINGAME</span>
+          <span className="kicker">WELCOME TO FOUNDIGAME</span>
           <h1>まだ見ぬ名作の、<br />最初の仲間になろう。</h1>
           <ul><li><Check /> 開発中のゲームをすぐ遊べる</li><li><Check /> プレイ中の気づきを作品ページから送れる</li><li><Check /> 毎月のポイントで推しを応援</li></ul>
         </div>
@@ -35,7 +35,7 @@ export default function LoginPage() {
         <Link href="/" className="auth-back">← ホームへ戻る</Link>
         <div className="auth-box">
           <span className="kicker">MOCK ACCOUNT</span>
-          <h2>FounDinGameをはじめる</h2>
+          <h2>FounDiGameをはじめる</h2>
           <p>体験するロールを選んでログインしてください。</p>
           <div className="role-select"><button onClick={() => setMode("player")} className={mode === "player" ? "active" : ""}><Gamepad2 /><b>プレイヤー</b><span>遊ぶ・気づきを届ける</span></button><button onClick={() => setMode("creator")} className={mode === "creator" ? "active" : ""}><Hammer /><b>クリエイター</b><span>作品を公開・分析</span></button></div>
           <form onSubmit={login}>

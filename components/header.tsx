@@ -23,9 +23,9 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="header-inner shell">
-        <Link href="/" className="brand" aria-label="FounDinGame ホーム">
+        <Link href="/" className="brand" aria-label="FounDiGame ホーム">
           <LogoMark className="brand-mark" />
-          <span>FOUNDIN<span>GAME</span></span>
+          <span>FOUNDI<span>GAME</span></span>
         </Link>
         <nav className={open ? "main-nav open" : "main-nav"}>
           {nav.map((item) => {

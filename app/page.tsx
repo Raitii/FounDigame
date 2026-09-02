@@ -15,7 +15,7 @@ export default function Home() {
 
       <RevealOnScroll>
         <section className="shell service-intro">
-          <div><span className="kicker">WHY FOUNDINGAME</span><h2>遊んで気づく。<br />その気づきで、ゲームが育つ。</h2></div>
+          <div><span className="kicker">WHY FOUNDIGAME</span><h2>遊んで気づく。<br />その気づきで、ゲームが育つ。</h2></div>
           <p>プレイ中に生まれた「少し分かりにくい」「こうなればもっと面白い」を、作品ページからすぐ開発者へ。未完成ゲームの発見から、フィードバック、応援、アップデート後の再プレイまでを一つにつなぎます。</p>
         </section>
       </RevealOnScroll>
