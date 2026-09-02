@@ -5,6 +5,8 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 export const feedbackCategories = ["分かりにくい", "バグ報告", "改善アイデア", "よかった点"] as const;
 export type FeedbackCategory = (typeof feedbackCategories)[number];
 type FeedbackItem = { game: string; category: FeedbackCategory; rating: number; text: string; date: string };
+const storageKey = "foundingame-demo";
+const legacyStorageKey = "foundigame-demo";
 type DemoState = {
   loggedIn: boolean;
   role: "player" | "creator";
@@ -42,7 +44,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState(defaultState);
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("foundigame-demo");
+    const saved = window.localStorage.getItem(storageKey) ?? window.localStorage.getItem(legacyStorageKey);
     if (saved) {
       try { setState({ ...defaultState, ...JSON.parse(saved) }); } catch { /* use defaults */ }
     }
@@ -50,7 +52,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (loaded) window.localStorage.setItem("foundigame-demo", JSON.stringify(state));
+    if (loaded) window.localStorage.setItem(storageKey, JSON.stringify(state));
   }, [state, loaded]);
 
   const toggleFavorite = useCallback((slug: string) => {

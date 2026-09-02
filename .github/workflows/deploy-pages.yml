@@ -1,4 +1,4 @@
-name: Deploy FounDigame to GitHub Pages
+name: Deploy FounDinGame to GitHub Pages
 
 on:
   push:

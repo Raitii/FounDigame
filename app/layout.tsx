@@ -5,7 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "FounDigame — 遊んで気づく。その気づきで、ゲームが育つ。",
+  title: "FounDinGame — 遊んで気づく。その気づきで、ゲームが育つ。",
   description: "未完成ゲームを発見・プレイし、日常の気づきと応援を開発者へ届ける参加型ゲーム支援サービス",
 };
 

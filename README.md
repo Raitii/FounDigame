@@ -1,4 +1,4 @@
-# FounDigame Mock v0.2
+# FounDinGame Mock v0.2
 
 「未完成ゲームを見つける → 遊んで気づく → 作品ページから伝える → 応援する → 更新後に再プレイ」という参加型ゲーム支援体験を確認するための、Next.js製インタラクティブモックです。
 
@@ -31,7 +31,7 @@ npm run dev
 
 `main`ブランチへpushすると、GitHub Actionsが静的サイトをビルドしてGitHub Pagesへ自動デプロイします。
 
-- 公開予定URL: `https://raitii.github.io/FounDigame/`
+- 公開予定URL: `https://raitii.github.io/FounDinGame/`
 - ローカルビルド: `npm run build`
 - 静的成果物: `out/`
 
